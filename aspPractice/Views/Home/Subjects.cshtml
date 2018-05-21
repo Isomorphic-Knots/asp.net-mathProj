@@ -1,0 +1,23 @@
+﻿@model aspPractice.ViewModels.SubjectsViewModel
+@{
+    ViewBag.Title = "Subjects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Subject.Name</h2>
+
+@if(Model.Problem.Count == 0)
+{
+    <p>None yet</p>
+}
+else
+{
+     foreach(var id in Model.Problem)
+        {
+            <address>
+                <a href="http://localhost:59865/Home/Subjects/Problem/@id.Id">problem @id.Id</a>
+            </address>
+
+        }
+   
+}
